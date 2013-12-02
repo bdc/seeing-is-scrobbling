@@ -30,7 +30,7 @@ Disadvantages
 
 While the aim is to provide a relevant visual experience, it's not perfect.
 
-Bad syncing is the principal disadvantage of using this. The audio and video are almost certainly not going to be perfectly synced. In some cases, the audio and video versions of the songs are different lengths, when one contains an intro and an outro, making this quite noticeable.
+Bad syncing is the principal disadvantage of using this. The audio and video are almost certainly not going to be perfectly synced. In some cases, the audio and video versions of the songs are different lengths, when one contains an intro or outro, making this quite noticeable.
 
 Sometimes the most relevant video is difficult to identify. At this time, the video with the most views is selected as most relevant, which works in 95% of cases.
 
@@ -39,12 +39,17 @@ Improvements
 
 Easy:
 
-* Provide a nicer welcome screen that allows the user to enter their last.fm username.
+* Provide a nicer welcome screen that allows the user to enter their Last.fm username.
 * Allow a user to configure preferred settings, such as stream quality.
 
 Hard:
 
 * Reliable syncing between audio and video.
+
+Fork
+----
+
+If you want to run this as a service, you'll need to provide api key values for Last.fm and Youtube in py/sis_api_keys.py.
 
 Feedback
 --------

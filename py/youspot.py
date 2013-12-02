@@ -1,14 +1,10 @@
 #!/usr/bin/python
 
 import pylast
+import sis_api_keys
 from apiclient import discovery
 
-DATA = {
-    'LastfmApiKey': 'a380eab11f9c1fc7ad5aafd55070d02a',
-    'LastfmApiSecret': '9c84ebeaa770894e8ed4801528a4b53a',
-    'GoogleApiKey': 'AIzaSyDobYcrDqGVuQomPqX6d4L-BhI1e76My20',
-    'GoogleApiSecret': '1SJSwwJvHjIzDMoSl2METexW',
-    }
+DATA = sis_api_keys.DATA
 
 def GetNowPlaying(username, last_scrobbled_track_id):
   rsp = {'username': username}
