@@ -36,13 +36,30 @@ def _GetScrobbleData(username):
 def _GetYoutubeData(song_title, artist_name):
   query = '%s %s' % (song_title, artist_name)
   svc = discovery.build('youtube', 'v3', developerKey=DATA['GoogleApiKey'])
-  rsp = svc.search().list(part='id,snippet', order='viewCount', q=query,
-      safeSearch='none', type='video', videoEmbeddable='true').execute()
-  video = rsp['items'][0]
+  # Fetches by relevance and find the one with the most views.
+  # Can't order by most views because youtube will serve something really
+  # popular and likely unrelated.
+  req = svc.search().list(part='id,snippet', order='relevance',
+      q=query, safeSearch='none', type='video', videoEmbeddable='true')
+  rsp = req.execute()
+  video_ids = [item['id']['videoId'] for item in rsp['items']]
+  best_video = _GetMostViewedYoutubeVideo(video_ids)
   return {
-      'video_title': video['snippet']['title'],
-      'video_id': video['id']['videoId'],
+      'video_title': best_video['snippet']['title'],
+      'video_id': best_video['id'],
       }
+
+def _GetMostViewedYoutubeVideo(video_ids):
+  svc = discovery.build('youtube', 'v3', developerKey=DATA['GoogleApiKey'])
+  req = svc.videos().list(part='id,snippet,statistics',id=','.join(video_ids))
+  rsp = req.execute()
+  max_views = 0
+  best_video = None
+  for item in rsp['items']:
+    if int(item['statistics']['viewCount']) > max_views:
+      best_video = item
+      max_views = int(item['statistics']['viewCount'])
+  return best_video
 
 
 

@@ -34,7 +34,6 @@ $(document).ready(function() {
         last_scrobbled_track_id: $("#last_scrobbled_track_id").val()
       },
     }).done(function(rsp) {
-      console.log(rsp);
       if(rsp.debug) {
         $("#debug").html(rsp.debug);
       }
