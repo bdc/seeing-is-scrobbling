@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  setInterval(check, 10000); // 1800
+  setInterval(check, 1800);
   setplayersize();
 
   function setplayersize() {
