@@ -45,8 +45,9 @@ $(document).ready(function() {
             $("#nowplaying").text(rsp.youtube_data.video_title);
             $("#last_scrobbled_track_id").val(new_track_id);
             setplayersize();
+            // https://developers.google.com/youtube/js_api_reference
             $("#youtubeplayer")[0].loadVideoById(rsp.youtube_data.video_id, 6,
-                'highres');
+                'hd720');
             $("#youtubeplayer")[0].mute();
           }
         }
