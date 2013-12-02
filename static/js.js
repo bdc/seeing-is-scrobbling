@@ -51,6 +51,9 @@ $(document).ready(function() {
           }
         }
       }
+      else {
+        $("#nowplaying").text("Nothing is playing.");
+      }
     });
   }
 
