@@ -1,0 +1,32 @@
+body {
+  margin: 0px               !important;
+  background-color: black   !important;
+  text-align: center        !important;
+}
+
+#username, #last_scrobbled_track_id {
+  display: none;
+}
+
+#nowplaying {
+  float: right;
+  margin: 20px;
+  position: absolute;
+  z-index: 100;
+  color: white;
+  text-shadow: -1px -1px black, -1px 1px black, 1px 1px black, 1px -1px black;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: large;
+}
+
+#history {
+  display: none;
+}
+
+#debug {
+  display: none;
+}
+
+
+
