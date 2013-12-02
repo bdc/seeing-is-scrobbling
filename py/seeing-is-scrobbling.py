@@ -11,7 +11,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class WelcomeHandler(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
-    self.response.write('Welcome! Visit /u/<last.fm username> to get started.')
+    self.response.write('Welcome! Visit /u/&lt;last.fm username> to get started.')
 
 class ViewerHandler(webapp2.RequestHandler):
   def get(self, **kwargs):
