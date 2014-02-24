@@ -32,14 +32,13 @@ While the aim is to provide a relevant visual experience, it's not perfect.
 
 Bad syncing is the principal disadvantage of using this. The audio and video are almost certainly not going to be perfectly synced. In some cases, the audio and video versions of the songs are different lengths, when one contains an intro or outro, making this quite noticeable.
 
-Sometimes the most relevant video is difficult to identify. At this time, the video with the most views is selected as most relevant, which works in 95% of cases.
+Pre-roll video ads are unavoidable in the Youtube player API and really upset the experience.
 
 Improvements
 ------------
 
 Easy:
 
-* Provide a nicer welcome screen that allows the user to enter their Last.fm username.
 * Allow a user to configure preferred settings, such as stream quality.
 
 Hard:
