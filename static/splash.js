@@ -41,7 +41,7 @@ $(document).ready(function() {
 });
 
 var playerPreviewVideos_ = [
-  {v: 'QK8mJJJvaes', t: 70}, /* Macklemore Thrift Shop */
+  {v: 'QK8mJJJvaes', t: 40}, /* Macklemore Thrift Shop */
   {v: 'CFWX0hWCbng', t: 202}, /* Ke$ha Blow */
   {v: 'ktvTqknDobU', t: 162}, /* Imagine Dragons Radioactive */
   {v: 'w8KQmps-Sog', t: 122}, /* Muse Uprising */
@@ -49,6 +49,9 @@ var playerPreviewVideos_ = [
   {v: 'YJVmu6yttiw', t: 102}, /* Skrillex Bangarang */
   {v: 'sOnqjkJTMaA', t: 542}, /* Michael Jackson Thriller */
   {v: 'PQHPYelqr0E', t: 157}, /* Weezer Pork and Beans */
+  {v: 'EVBsypHzF3U', t: 379}, /* Lady Gaga Telephone */
+  {v: 'Whv1tLqKZig', t:40}, /* Hollerado Americanarama */
+  {v: '12zJw9varYE', t:42}, /* OK Go WTF */
   ];
 function ChangePlayerPreview() {
   var activePlayer = youtubePlayers[youtubePlayers['active']];
