@@ -3,20 +3,21 @@ import os, json
 import jinja2
 import youspot
 
-JINJA_ENVIRONMENT = jinja2.Environment(
+_JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + '/../templates'),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class WelcomeHandler(webapp2.RequestHandler):
+class SplashHandler(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
-    self.response.write('Welcome! Visit /u/&lt;last.fm username> to get started.')
+    template = _JINJA_ENVIRONMENT.get_template('splash.html')
+    self.response.write(template.render({}))
 
 class ViewerHandler(webapp2.RequestHandler):
   def get(self, **kwargs):
     self.response.headers['Content-Type'] = 'text/html'
-    template = JINJA_ENVIRONMENT.get_template('viewer.html')
+    template = _JINJA_ENVIRONMENT.get_template('viewer.html')
     self.response.write(template.render({
       'username': kwargs['username']
     }))
@@ -31,6 +32,6 @@ class NowPlayingHandler(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
   webapp2.Route('/u/<username>', handler=ViewerHandler),
   webapp2.Route('/q/nowplaying', handler=NowPlayingHandler),
-  webapp2.Route('/', handler=WelcomeHandler),
+  webapp2.Route('/', handler=SplashHandler),
 ], debug=True)
 

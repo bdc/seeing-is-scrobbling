@@ -1,29 +1,27 @@
-<html>
-  <head>
-    <script type="text/javascript" src="/s/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/s/js.js"></script>
-    <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
-    <link href="/s/css.css" rel="stylesheet" type="text/css" />
-  </head>
-
-  <body>
-
-    <input id="username" value="{{username}}"/>
-    <div id="nowplaying">Reading {{username}}'s scrobble data...</div>
+{% extends "base.html" %}
+{% block header %}
+  <script type="text/javascript" src="/s/app.js"></script>
+{% endblock %}
+{% block content %}
+  <div id="nowplaying" class="strong">
+    Reading {{username}}'s scrobble data...
+  </div>
+  <div class="hidden">
+    <div id="username">{{username}}</div>
     <div id="last_scrobbled_track_id"></div>
     <div id="history"></div>
     <div id="debug"></div>
     <div id="title1"></div>
     <div id="title2"></div>
+  </div>
+{% endblock %}
 
-    <object id="youtube" width="640" height="390">
-      <param name="movie" value="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0"></param>
-      <param name="allowScriptAccess" value="always"></param>
-      <embed id="youtubeplayer" src="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0" type="application/x-shockwave-flash" allowscriptaccess="always" width="640" height="390"></embed>
-    </object>
-
-  </body>
-
-</html>
+{% block other %}
+  <object id="youtube">
+    <param name="movie" value="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0"></param>   
+    <param name="allowScriptAccess" value="always"></param>
+    <embed id="youtubeplayer" src="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0" type="application/x-shockwave-flash" allowscriptaccess="always" width="640" height="390"></embed>
+  </object>
+{% endblock %}
 
 

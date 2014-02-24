@@ -4,20 +4,78 @@ body {
   text-align: center        !important;
 }
 
-#username, #last_scrobbled_track_id {
+#nowplaying {
+  float: left;
+}
+
+.strong {
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.hidden {
   display: none;
 }
 
-#nowplaying {
-  float: right;
+.framed {
+  width: 90%;
+  padding-top: 100px;
+}
+
+.modal {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+}
+
+.modal p {
+  padding-bottom: 8px;
+}
+
+.content {
+  width: 100%;
   margin: 40px;
   position: absolute;
   z-index: 100;
   color: white;
   text-shadow: -1px -1px black, -1px 1px black, 1px 1px black, 1px -1px black;
-  font-weight: bold;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: x-large;
+}
+
+.info {
+  padding: 20px;
+}
+
+.screen {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+div.player {
+  position: absolute;
+  z-index: 0;
+}
+
+input[type=text] {
+  background: #cccccc;
+  font-size: 20px;
+  font-family: serif;
+  width: 200px;
+  color: black;
+}
+
+.huh {
+  vertical-align: top;
+  display: inline-block;
+  font-size: small;
+  color: yellow;
+  cursor: pointer;
 }
 
 #history {

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block header %}
+  <script type="text/javascript" src="/s/splash.js"></script>
+{% endblock %}
+{% block content %}
+  <div class="framed">
+    <div class="info strong">
+      Just two steps to get going!
+    </div>
+    <div class="info">
+      1. Start scrobbling from your favorite music player, such as Spotify
+      <div class="huh" data-toggle="modal" data-target="#huh_1">huh?</div>
+    </div>
+    <div class="info">
+      2. Enter your last.fm username below, and press enter
+    </div>
+    <div class="info">
+      <input type="text" id="username"/>
+    </div>
+  </div>
+{% endblock %}
+
+{% block other %}
+  <div class="screen"></div>
+
+  <div class="modal fade" id="huh_1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="info strong modal-title">Scrobbling</div>
+        <div class="modal-body">
+          <p>To use this, you'll need to be <a href="http://en.wikipedia.org/wiki/Scrobbling" target="_blank">scrobbling</a>. Your music application sends data to the Last.fm scrobbling service, which is published on the web. Seeing-is-Scrobbling reads from Last.fm's scrobbling data.
+          <p>Nearly every internet-connected music application already has scrobbling attached, you just need to enable it and point it at your Last.fm account.
+          <p><em>Hint:</em> In Mac Spotify, you can do this by going to Spotify->Preferences, and select 'Scrobble to Last.fm'.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="player">
+    <object>
+      <param name="movie" value="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0&playerapiid=A"></param>
+      <param name="allowScriptAccess" value="always"></param>
+      <embed id="youtubeplayer_A" src="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0&playerapiid=A" type="application/x-shockwave-flash" allowscriptaccess="always" width="640" height="390"></embed>
+    </object>
+  </div>
+  <div class="player">
+    <object>
+      <param name="movie" value="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0&playerapiid=B"></param>
+      <param name="allowScriptAccess" value="always"></param>
+      <embed id="youtubeplayer_B" src="https://www.youtube.com/apiplayer?version=3&enablejsapi=1&modestbranding=1&showinfo=0&playerapiid=B" type="application/x-shockwave-flash" allowscriptaccess="always" width="640" height="390"></embed>
+    </object>
+  </div>
+
+{% endblock %}
+
